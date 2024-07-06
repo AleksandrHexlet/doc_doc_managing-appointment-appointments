@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 
-@Table(name = "feedback",indexes = @Index(name = "doctor_id_index", columnList = "doctorId"))
+@Table(name = "feedback")
 public class FeedBack {
 
     @Id
@@ -29,9 +29,7 @@ public class FeedBack {
     @NonNull
     private LocalDateTime date;
 
-
     @OneToOne
-    @JoinColumn(name = "visit_doctor")
+    @JoinColumn(name = "visit_doctor_id")
     private VisitDoctor visitDoctor;
-
 }

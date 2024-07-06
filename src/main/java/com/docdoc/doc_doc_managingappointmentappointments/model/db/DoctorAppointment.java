@@ -32,18 +32,21 @@ public class DoctorAppointment {
     @NotNull
     private LocalTime timeFrom;
 
-    @JoinColumn(name ="doctor_id")
+    @Column(name ="doctor_id")
     @Positive
     private long doctorId;
 
-    @JoinColumn(name = "clinic_id")
+    @Column(name = "clinic_id")
     @Positive
     private long clinicId;
 
-    @JoinColumn(name = "user_id")
+    @Column(name = "user_id")
     @Positive
     private long userId;
 
+    @Column(name = "price")
+    @Positive
+    private Double price;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "appointment_status")
